@@ -1,3 +1,3 @@
 # InAppMicroservice2
 
-- InApp Microservice 2
+- InApp Notification Microservice 2
