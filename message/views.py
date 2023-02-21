@@ -106,6 +106,7 @@ def gas_usage_alert(request, meter_id):
 			if gas_level <= 2:
 				res = scale['track 6']
 				return Response ({
+					'id': meter_x.id,
 					'meter':get_meter,
 					'last_gas_quantity_used':gas_level,
 					'alert message': res,
@@ -114,6 +115,7 @@ def gas_usage_alert(request, meter_id):
 			elif gas_level > 2 and gas_level <= 3.9:
 				res = scale['track 5']
 				return Response ({
+					'id': meter_x.id,
 					'meter':get_meter,
 					'last_gas_quantity_used':gas_level,
 					'alert message': res,
@@ -122,6 +124,7 @@ def gas_usage_alert(request, meter_id):
 			elif gas_level >= 4 and gas_level < 6:
 				res = scale['track 4']
 				return Response ({
+					'id': meter_x.id,
 					'meter':get_meter,
 					'last_gas_quantity_used':gas_level,
 					'alert message': res,
@@ -130,6 +133,7 @@ def gas_usage_alert(request, meter_id):
 			elif gas_level >= 6 and gas_level <= 7.9:
 				res = scale['track 3']
 				return Response ({
+					'id': meter_x.id,
 					'meter':get_meter,
 					'last_gas_quantity_used':gas_level,
 					'alert message': res,
@@ -138,6 +142,7 @@ def gas_usage_alert(request, meter_id):
 			elif gas_level >= 8 and gas_level <= 9.9:
 				res = scale['track 2']
 				return Response ({
+					'id': meter_x.id,
 					'meter':get_meter,
 					'last_gas_quantity_used':gas_level,
 					'alert message': res,
@@ -146,6 +151,7 @@ def gas_usage_alert(request, meter_id):
 			elif gas_level >= 10 and gas_level <= 11.9:
 				res = scale['track 1']
 				return Response ({
+					'id': meter_x.id,
 					'meter':get_meter,
 					'last_gas_quantity_used':gas_level,
 					'alert message': res,
@@ -154,6 +160,7 @@ def gas_usage_alert(request, meter_id):
 			elif gas_level == 12:
 				res = scale['track 7']
 				return Response ({
+					'id': meter_x.id,
 					'meter':get_meter,
 					'last_gas_quantity_used':gas_level,
 					'alert message': res,
