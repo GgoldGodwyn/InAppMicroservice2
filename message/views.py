@@ -8,6 +8,10 @@ from django.http import HttpResponse
 from rest_framework.parsers import JSONParser
 import requests
 import json
+import datetime
+
+# Get current time
+current_time = datetime.datetime.now()
 
 # Create your views here.
 @api_view(['GET'])
@@ -110,7 +114,8 @@ def gas_usage_alert(request, meter_id):
 					'meter':get_meter,
 					'last_gas_quantity_used':gas_level,
 					'alert message': res,
-					'status':last_meter.message_status
+					'status':last_meter.message_status,
+					'time_fetched':current_time
 	            })
 			elif gas_level > 2 and gas_level <= 3.9:
 				res = scale['track 5']
@@ -119,7 +124,8 @@ def gas_usage_alert(request, meter_id):
 					'meter':get_meter,
 					'last_gas_quantity_used':gas_level,
 					'alert message': res,
-					'status':last_meter.message_status
+					'status':last_meter.message_status,
+					'time_fetched':current_time
 	            })
 			elif gas_level >= 4 and gas_level < 6:
 				res = scale['track 4']
@@ -128,7 +134,8 @@ def gas_usage_alert(request, meter_id):
 					'meter':get_meter,
 					'last_gas_quantity_used':gas_level,
 					'alert message': res,
-					'status':last_meter.message_status
+					'status':last_meter.message_status,
+					'time_fetched':current_time
 	            })
 			elif gas_level >= 6 and gas_level <= 7.9:
 				res = scale['track 3']
@@ -137,7 +144,8 @@ def gas_usage_alert(request, meter_id):
 					'meter':get_meter,
 					'last_gas_quantity_used':gas_level,
 					'alert message': res,
-					'status':last_meter.message_status
+					'status':last_meter.message_status,
+					'time_fetched':current_time
 	            })
 			elif gas_level >= 8 and gas_level <= 9.9:
 				res = scale['track 2']
@@ -146,7 +154,8 @@ def gas_usage_alert(request, meter_id):
 					'meter':get_meter,
 					'last_gas_quantity_used':gas_level,
 					'alert message': res,
-					'status':last_meter.message_status
+					'status':last_meter.message_status,
+					'time_fetched':current_time
 	            })
 			elif gas_level >= 10 and gas_level <= 11.9:
 				res = scale['track 1']
@@ -155,7 +164,8 @@ def gas_usage_alert(request, meter_id):
 					'meter':get_meter,
 					'last_gas_quantity_used':gas_level,
 					'alert message': res,
-					'status':last_meter.message_status
+					'status':last_meter.message_status,
+					'time_fetched':current_time
 	            })
 			elif gas_level == 12:
 				res = scale['track 7']
@@ -164,7 +174,8 @@ def gas_usage_alert(request, meter_id):
 					'meter':get_meter,
 					'last_gas_quantity_used':gas_level,
 					'alert message': res,
-					'status':last_meter.message_status
+					'status':last_meter.message_status,
+					'time_fetched':current_time
 	            })
 		except IndexError:
 			print(f'The gas level for the meter fetched is {gas_level}')
